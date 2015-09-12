@@ -6,9 +6,13 @@
   <div class="row">
     <% group.compact.each do |idea| %>
       <div class="col-md-4">
-        <%= image_tag idea.picture_url(:thumb) if idea.picture? %>
-        <h4><%= link_to idea.name, idea %></h4>
-        <%= idea.description %>
+        <div class="thumbnail">
+          <%= image_tag idea.picture_url(:thumb) if idea.picture? %>
+          <div class="caption">
+            <h4><%= link_to idea.name, idea %></h4>
+            <%= idea.description %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
